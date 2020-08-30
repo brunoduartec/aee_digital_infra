@@ -1,0 +1,63 @@
+version: '3'
+services:
+    reverse-proxy:
+        build:
+            context: .
+        image: reverse-proxy
+        container_name: reverse-proxy
+        ports:
+            - "80:80"
+        networks: 
+            - app-network
+        depends_on: 
+            - "aee_tech_front"
+            - "aee_tech_api"
+    aee_tech_api:
+        command: npm start
+        # image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
+        image: aee_tech_api
+        container_name: aee_tech_api
+        ports:
+            - "3000:3000"
+        volumes:
+            - .:/usr/app
+        networks:
+            - app-network
+        depends_on:
+            - "db"
+    aee_tech_front:
+        # image: docker.pkg.github.com/brunoduartec/aee_tech_front/aeetechfront:latest
+        image: aee_tech_front
+        container_name: aee_tech_front
+        ports:
+            - "4200:4200"
+        depends_on: 
+            - aee_tech_api
+        networks:
+            - app-network
+    db:
+        image: mysql:5.7
+        volumes:
+            - ./.mysql-data/db:/var/lib/mysql
+        restart: always
+        ports:
+            - 3306:3306
+        expose:
+            - 3306
+        environment:
+            MYSQL_ROOT_PASSWORD: aeepw
+            MYSQL_DATABASE: aee
+            MYSQL_USER: aee
+            MYSQL_PASSWORD: aeepw
+        networks:
+            - app-network
+    adminer:
+        image: adminer
+        ports:
+            - 8080:8080
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
