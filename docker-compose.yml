@@ -12,6 +12,7 @@ services:
         depends_on: 
             - "aee_tech_front"
             - "aee_tech_api"
+            - "aee_digital_trabalhos"
     aee_tech_api:
         command: npm start
         # image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
@@ -19,6 +20,19 @@ services:
         container_name: aee_tech_api
         ports:
             - "3000:3000"
+        volumes:
+            - .:/usr/app
+        networks:
+            - app-network
+        depends_on:
+            - "db"
+    aee_digital_trabalhos:
+        command: npm start
+        # image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
+        image: aee_digital_trabalhos
+        container_name: aee_digital_trabalhos
+        ports:
+            - "3100:3100"
         volumes:
             - .:/usr/app
         networks:
@@ -37,6 +51,7 @@ services:
             - app-network
     db:
         image: mysql:5.7
+        container_name: db
         volumes:
             - ./.mysql-data/db:/var/lib/mysql
         restart: always
@@ -53,6 +68,7 @@ services:
             - app-network
     adminer:
         image: adminer
+        container_name: adminer
         ports:
             - 8080:8080
         networks:
