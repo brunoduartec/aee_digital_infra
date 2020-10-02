@@ -6,7 +6,7 @@ services:
         image: reverse-proxy
         container_name: reverse-proxy
         ports:
-            - "80:80"
+            - "5000:5000"
         networks: 
             - app-network
         depends_on: 
