@@ -6,7 +6,7 @@ services:
         image: reverse-proxy
         container_name: reverse-proxy
         ports:
-            - "80:80"
+            - "5000:5000"
         networks: 
             - app-network
         depends_on: 
@@ -15,8 +15,8 @@ services:
             - "aee_digital_trabalhos"
     aee_tech_api:
         command: npm start
-        # image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
-        image: aee_tech_api
+        image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
+        # image: aee_tech_api
         container_name: aee_tech_api
         ports:
             - "3000:3000"
@@ -40,8 +40,8 @@ services:
         depends_on:
             - "db"
     aee_tech_front:
-        # image: docker.pkg.github.com/brunoduartec/aee_tech_front/aeetechfront:latest
-        image: aee_tech_front
+        image: docker.pkg.github.com/brunoduartec/aee_tech_front/aeetechfront:latest
+        # image: aee_tech_front
         container_name: aee_tech_front
         ports:
             - "4200:4200"
@@ -56,9 +56,9 @@ services:
             - ./.mysql-data/db:/var/lib/mysql
         restart: always
         ports:
-            - 3306:3306
+            - 52000:3306
         expose:
-            - 3306
+            - 52000
         environment:
             MYSQL_ROOT_PASSWORD: aeepw
             MYSQL_DATABASE: aee

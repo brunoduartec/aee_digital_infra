@@ -1,7 +1,7 @@
 
 echo "Inicializando"
 
-docker login https://docker.pkg.github.com -u brunoduartec -p df643f7375d20f14dca570d592381011a1a0440b
+cat ~/DOCKER_TOKEN.txt | docker login https://docker.pkg.github.com -u brunoduartec --password-stdin
 
 echo "Baixando a imagem da API"
 
