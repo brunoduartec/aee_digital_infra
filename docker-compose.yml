@@ -28,8 +28,8 @@ services:
             - "db"
     aee_digital_trabalhos:
         command: npm start
-        # image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
-        image: aee_digital_trabalhos
+        image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
+        # image: aee_digital_trabalhos
         container_name: aee_digital_trabalhos
         ports:
             - "3100:3100"
