@@ -11,4 +11,6 @@ echo "Baixando a imagem do front"
 
 docker pull docker.pkg.github.com/brunoduartec/aee_tech_front/aeetechfront:latest
 
+systemctl stop mysqld
+
 docker-compose up --build -d
