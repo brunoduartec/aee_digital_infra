@@ -13,10 +13,11 @@ services:
             - "aee_tech_front"
             - "aee_tech_api"
             - "aee_digital_trabalhos"
+    tty: true
     aee_tech_api:
         command: npm start
         image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
-        # image: aee_tech_api
+        # image: aee_tech_api:latest
         container_name: aee_tech_api
         ports:
             - "3000:3000"
@@ -26,10 +27,11 @@ services:
             - app-network
         depends_on:
             - "db"
+    tty: true
     aee_digital_trabalhos:
         command: npm start
-        image: docker.pkg.github.com/brunoduartec/aee_tech/aeeapi
-        # image: aee_digital_trabalhos
+        image: docker.pkg.github.com/brunoduartec/aee_digital_trabalhos/aee_digital_trabalhos
+        # image: aee_digital_trabalhos:latest
         container_name: aee_digital_trabalhos
         ports:
             - "3100:3100"
@@ -39,9 +41,10 @@ services:
             - app-network
         depends_on:
             - "db"
+    tty: true
     aee_tech_front:
         image: docker.pkg.github.com/brunoduartec/aee_tech_front/aeetechfront:latest
-        # image: aee_tech_front
+        # image: aee_tech_front:latest
         container_name: aee_tech_front
         ports:
             - "4200:4200"
@@ -49,6 +52,7 @@ services:
             - aee_tech_api
         networks:
             - app-network
+    tty: true
     db:
         image: mysql:5.7
         container_name: db
@@ -66,6 +70,7 @@ services:
             MYSQL_PASSWORD: aeepw
         networks:
             - app-network
+    tty: true
     adminer:
         image: adminer
         container_name: adminer
@@ -73,6 +78,7 @@ services:
             - 8080:8080
         networks:
             - app-network
+    tty: true
 
 networks:
     app-network:
