@@ -1,3 +1,5 @@
+echo "Limpando Instancias"
+./cleanup.sh
 
 echo "Inicializando"
 
