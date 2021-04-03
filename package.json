@@ -1,0 +1,24 @@
+{
+  "name": "aee_digital_infra",
+  "version": "1.0.0",
+  "description": "Infrastructure project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunoduartec/aee_digital_infra.git"
+  },
+  "author": "Bruno Duarte Corrêa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunoduartec/aee_digital_infra/issues"
+  },
+  "homepage": "https://github.com/brunoduartec/aee_digital_infra#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "shelljs": "^0.8.4"
+  }
+}
