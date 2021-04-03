@@ -5,7 +5,7 @@ const shell = require("shelljs");
 
 const port = 50100;
 
-app.get("/", async function (req, res) {
+app.post("/", async function (req, res) {
   shell.exec("./setup.sh");
 
   let runInfo = {
