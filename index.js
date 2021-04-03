@@ -6,11 +6,11 @@ const shell = require("shelljs");
 const port = 50100;
 
 app.get("/", async function (req, res) {
-  let result = await shell.exec("./setup.sh");
+  shell.exec("./setup.sh");
 
   let runInfo = {
     status: 200,
-    result: result,
+    data: "event triggered",
   };
 
   res.json(runInfo);
