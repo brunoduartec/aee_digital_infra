@@ -1,5 +1,5 @@
 echo "Limpando Instancias de Trabalhos"
-./cleanup.sh
+./aee_digital_trabalhos/cleanup.sh
 
 echo "Inicializando"
 
@@ -9,4 +9,4 @@ echo "Baixando a imagem das APIs"
 
 docker pull docker.pkg.github.com/brunoduartec/aee_digital_trabalhos/aee_digital_trabalhos:latest
 
-docker-compose up --build -d -f ./aee_digital_trabalhos/docker-compose.yml
+docker-compose -f ./aee_digital_trabalhos/docker-compose.yml up --build -d 
