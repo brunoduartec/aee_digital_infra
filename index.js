@@ -6,7 +6,13 @@ const shell = require("shelljs");
 const port = 50100;
 
 app.post("/", async function (req, res) {
-  shell.exec("./setup.sh");
+  let pipeline = req.query.project;
+
+  if (pipeline) {
+    shell.exec(`./${pipeline}/setup.sh`);
+  } else {
+    shell.exec("./setup.sh");
+  }
 
   let runInfo = {
     status: 200,

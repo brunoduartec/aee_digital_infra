@@ -1,13 +1,13 @@
 version: "3"
 services:
-  aee_digital_regionais:
+  aee_digital_trabalhos:
     command: npm start
-    image: docker.pkg.github.com/brunoduartec/aee_digital_regionais/aee_digital_regionais
-    # image: aee_digital_regionais:latest
-    container_name: aee_digital_regionais
+    image: docker.pkg.github.com/brunoduartec/aee_digital_trabalhos/aee_digital_trabalhos
+    # image: aee_digital_trabalhos:latest
+    container_name: aee_digital_trabalhos
     restart: always
     ports:
-      - "3000:3000"
+      - "3100:3100"
     volumes:
       - .:/usr/app
     networks:
