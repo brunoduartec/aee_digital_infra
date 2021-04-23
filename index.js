@@ -9,6 +9,7 @@ app.post("/", async function (req, res) {
   let pipeline = req.query.project;
 
   if (pipeline) {
+    console.log("-----Rodando a pipeline " + pipeline);
     shell.exec(`./${pipeline}/setup.sh`);
   } else {
     shell.exec("./setup.sh");
