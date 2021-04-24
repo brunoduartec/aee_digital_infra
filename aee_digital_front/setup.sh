@@ -1,5 +1,5 @@
 echo "Limpando Instancias de Front"
-./aee_digital_regionaiscleanup.sh
+./aee_digital_front/cleanup.sh
 
 echo "Inicializando"
 
@@ -9,4 +9,4 @@ echo "Baixando a imagem do Front"
 
 docker pull docker.pkg.github.com/brunoduartec/aee_digital_front/aee_digital_front:latest
 
-docker-compose -f ./aee_digital_front/docker-compose.yml up --build -d 
+docker-compose -f ./aee_digital_front/docker-compose.yml up --build
