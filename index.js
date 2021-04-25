@@ -2,8 +2,7 @@ const http = require("http");
 const express = require("express");
 const app = express();
 const shell = require("shelljs");
-
-const port = 50100;
+const config = require("./env.json");
 
 app.post("/", async function (req, res) {
   let pipeline = req.query.project;
@@ -24,6 +23,6 @@ app.post("/", async function (req, res) {
 });
 
 let server_http = http.Server(app);
-server_http.listen(port, "0.0.0.0", function () {
-  console.log("API is running on port: " + port);
+server_http.listen(config.port, "0.0.0.0", function () {
+  console.log("API is running on port: " + config.port);
 });
