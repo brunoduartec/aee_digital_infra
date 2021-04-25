@@ -25,6 +25,4 @@ app.post("/", async function (req, res) {
 let server_http = http.Server(app);
 server_http.listen(config.port, "0.0.0.0", function () {
   console.log("API is running on port: " + config.port);
-
-  shell.exec("chmod +777 *.sh & ./init.sh");
 });
