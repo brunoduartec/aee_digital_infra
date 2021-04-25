@@ -1,4 +1,5 @@
 echo "Começou a dar acessos"
+chmod +777 *.sh
 cd aee_digital_front
 chmod +777 *.sh
 cd ..
