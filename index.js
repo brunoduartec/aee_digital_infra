@@ -9,9 +9,9 @@ app.post("/", async function (req, res) {
 
   if (pipeline) {
     console.log("-----Rodando a pipeline " + pipeline);
-    shell.exec(`./${pipeline}/setup.sh`);
+    await shell.exec(`./${pipeline}/setup.sh`);
   } else {
-    shell.exec("./setup.sh");
+    await shell.exec("./setup.sh");
   }
 
   let runInfo = {
