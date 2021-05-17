@@ -4,6 +4,17 @@ const app = express();
 const shell = require("shelljs");
 const config = require("./env.json");
 
+const Controller = require("./controller/dbImport.controller");
+
+app.post("/import", async function (req, res) {
+  const controller = new Controller("./resources/Cadastro 2020 _v2.xlsx");
+  let { success, errors } = await controller.import();
+  res.json({
+    success: success,
+    errors: errors,
+  });
+});
+
 app.post("/", async function (req, res) {
   let pipeline = req.query.project;
 
