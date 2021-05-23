@@ -99,9 +99,7 @@ module.exports = class DBImportContoller {
       NOME_CENTRO: centroInfo.Name,
       NOME_CURTO: centroInfo.short,
       CNPJ_CENTRO: centroInfo.cnpj,
-      DATA_FUNDACAO: Date.parse(centroInfo.fundacao)
-        ? centroInfo.fundacao
-        : "1/1/1900",
+      DATA_FUNDACAO: centroInfo.fundacao,
       ENDERECO: centroInfo.local.endereco,
       CEP: centroInfo.local.cep,
       BAIRRO: centroInfo.local.bairro,

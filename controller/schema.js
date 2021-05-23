@@ -105,7 +105,11 @@ function getSchema() {
         },
         "Data de Fundação": {
           prop: "fundacao",
-          type: String,
+          type: (value) => {
+            const date = Date.parse(value) ? value : new Date("1/1/1900");
+
+            return date;
+          },
         },
         Funcionamento: {
           prop: "funcionamento",
@@ -230,10 +234,11 @@ function getSchema() {
                 return number;
               },
             },
-            "Das turmas de EAE que você mencionou acima, qual o número turma mais recente? Exemplo: minha casa possui três turmas de EAE e a mais recente é a 21ª turma": {
-              prop: "turma",
-              type: String,
-            },
+            "Das turmas de EAE que você mencionou acima, qual o número turma mais recente? Exemplo: minha casa possui três turmas de EAE e a mais recente é a 21ª turma":
+              {
+                prop: "turma",
+                type: String,
+              },
             "Quantidade de Alunos": {
               prop: "alunos",
               type: Number,
@@ -273,10 +278,11 @@ function getSchema() {
               prop: "expositores",
               type: Number,
             },
-            "Quantidade de Dirigentes aptos a dirigir uma turma de Curso de Médiuns": {
-              prop: "dirigentes_aptos",
-              type: Number,
-            },
+            "Quantidade de Dirigentes aptos a dirigir uma turma de Curso de Médiuns":
+              {
+                prop: "dirigentes_aptos",
+                type: Number,
+              },
             "Quantidade de dirigentes que estar dirigindo turmas em 2020": {
               prop: "dirigentes",
               type: Number,
