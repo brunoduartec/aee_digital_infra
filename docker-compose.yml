@@ -2,8 +2,8 @@ version: "3"
 services:
   aee_digital_regionais:
     command: npm start
-    # image: docker.pkg.github.com/brunoduartec/aee_digital_regionais/aee_digital_regionais
-    image: aee_digital_regionais
+    image: docker.pkg.github.com/brunoduartec/aee_digital_regionais/aee_digital_regionais
+    # image: aee_digital_regionais
     container_name: aee_digital_regionais
     restart: always
     ports:
@@ -17,8 +17,8 @@ services:
     tty: true
   aee_digital_trabalhos:
     command: npm start
-    # image: docker.pkg.github.com/brunoduartec/aee_digital_trabalhos/aee_digital_trabalhos
-    image: aee_digital_trabalhos
+    image: docker.pkg.github.com/brunoduartec/aee_digital_trabalhos/aee_digital_trabalhos
+    # image: aee_digital_trabalhos
     container_name: aee_digital_trabalhos
     restart: always
     ports:
@@ -31,8 +31,8 @@ services:
       - "db"
     tty: true
   aee_digital_front:
-    # image: docker.pkg.github.com/brunoduartec/aee_digital_front/aee_digital_front:latest
-    image: aee_digital_front
+    image: docker.pkg.github.com/brunoduartec/aee_digital_front/aee_digital_front:latest
+    # image: aee_digital_front
     container_name: aee_digital_front
     restart: always
     ports:
