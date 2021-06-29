@@ -23,13 +23,18 @@ function dayTimeParser(dh) {
 
     let dayTimeStripped = element.trim().split(" ");
     let day = getDayByShort(dayTimeStripped[0]);
-    let time = dayTimeStripped[1];
+    let time = dayTimeStripped[1]
+      ? dayTimeStripped[1].replace(/\D/g, "")
+      : undefined;
+
     let dayInfo = {
       day: day,
       time: time,
     };
 
-    daysInfo.push(dayInfo);
+    if (day && time) {
+      daysInfo.push(dayInfo);
+    }
   }
 
   return daysInfo;
