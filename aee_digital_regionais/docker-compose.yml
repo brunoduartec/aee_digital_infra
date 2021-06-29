@@ -1,17 +1,32 @@
 version: "3"
+
 services:
   aee_digital_regionais:
+    build: .
     command: npm start
-    image: docker.pkg.github.com/brunoduartec/aee_digital_regionais/aee_digital_regionais
+    image: aee_digital_regionais
     container_name: aee_digital_regionais
-    restart: always
     ports:
       - "3000:3000"
     volumes:
       - .:/usr/app
-    networks:
-      - app-network
-    tty: true
-networks:
-  app-network:
-    driver: bridge
+    depends_on:
+      - "mongo"
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - "3010:27017"
+  mongo-express:
+    image: mongo-express
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+    depends_on:
+      - mongo
+    ports:
+      - "30000:8081"
+    restart: always
