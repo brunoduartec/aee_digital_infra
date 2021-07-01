@@ -4,7 +4,8 @@ services:
   aee_digital_trabalhos:
     build: .
     command: npm start
-    image: aee_digital_trabalhos
+    image: docker.pkg.github.com/brunoduartec/aee_digital_trabalhos/aee_digital_trabalhos
+    image: 
     ports:
       - "3100:3100"
     volumes:

@@ -4,7 +4,7 @@ services:
   aee_digital_regionais:
     build: .
     command: npm start
-    image: aee_digital_regionais
+    image: docker.pkg.github.com/brunoduartec/aee_digital_regionais/aee_digital_regionais
     container_name: aee_digital_regionais
     ports:
       - "3000:3000"
