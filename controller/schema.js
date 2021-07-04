@@ -191,21 +191,36 @@ function getSchema() {
             },
           },
         },
-        "Quantidade média de assistidos em todos os dias, por semana": {
-          prop: "assistidos",
-          type: Number,
-        },
-        "Quantidade de voluntários por semana": {
-          prop: "voluntarios",
-          type: Number,
-        },
-        "Quantidade de preletores aptos da casa": {
-          prop: "preletores",
-          type: Number,
-        },
-        "Quantidade de entrevistadores aptos da casas": {
-          prop: "entrevistadores",
-          type: Number,
+        "Assistência Espiritual": {
+          prop: "AE",
+          type: {
+            "DH AE": {
+              prop: "dh_ae",
+              type: (value) => {
+                const number = dayTimeParser(value);
+                if (!number) {
+                  throw new Error("invalid");
+                }
+                return number;
+              },
+            },
+            "Quantidade média de assistidos em todos os dias, por semana": {
+              prop: "assistidos",
+              type: Number,
+            },
+            "Quantidade de voluntários por semana": {
+              prop: "voluntarios",
+              type: Number,
+            },
+            "Quantidade de preletores aptos da casa": {
+              prop: "preletores",
+              type: Number,
+            },
+            "Quantidade de entrevistadores aptos da casas": {
+              prop: "entrevistadores",
+              type: Number,
+            },
+          },
         },
         "Curso Básico": {
           prop: "CB",
@@ -355,6 +370,7 @@ function getSchema() {
       },
     },
   };
+
   return schema;
 }
 

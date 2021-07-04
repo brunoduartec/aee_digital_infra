@@ -65,6 +65,7 @@ module.exports = class RegionaisServices {
       ESTADO: centroInfo.local.uf,
       PAIS: centroInfo.local.pais,
       REGIONAL_ID: centroInfo.regional_id,
+      FUNCIONALIDADE: centroInfo.funcionalidade,
     };
     try {
       let centroInfo = await axios.post(`${config.regionaisAPI}centros`, body);

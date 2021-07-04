@@ -1,17 +1,44 @@
 {
+  "ae": {
+    "NOME_ATIVIDADE": "Assistência Espiritual",
+    "RECEIVER_ALIAS": "Assistido",
+    "ATOR_ALIAS": "Expositor",
+    "COORDENADOR_ALIAS": "Dirigente"
+  },
   "eae": {
-    "NOME_ATIVIDADE": "Escola de Aprendizes do Evangelho"
+    "NOME_ATIVIDADE": "Escola de Aprendizes do Evangelho",
+    "RECEIVER_ALIAS": "Aluno",
+    "ATOR_ALIAS": "Expositor",
+    "COORDENADOR_ALIAS": "Dirigente"
   },
   "moc": {
-    "NOME_ATIVIDADE": "Mocidade"
+    "NOME_ATIVIDADE": "Mocidade",
+    "RECEIVER_ALIAS": "Aluno",
+    "ATOR_ALIAS": "Expositor",
+    "COORDENADOR_ALIAS": "Dirigente"
+  },
+  "pre": {
+    "NOME_ATIVIDADE": "Pré-Mocidade",
+    "RECEIVER_ALIAS": "Aluno",
+    "ATOR_ALIAS": "Expositor",
+    "COORDENADOR_ALIAS": "Dirigente"
   },
   "cm": {
-    "NOME_ATIVIDADE": "Curso de Médiuns"
+    "NOME_ATIVIDADE": "Curso de Médiuns",
+    "RECEIVER_ALIAS": "Aluno",
+    "ATOR_ALIAS": "Expositor",
+    "COORDENADOR_ALIAS": "Dirigente"
   },
   "cb": {
-    "NOME_ATIVIDADE": "Curso Básico"
+    "NOME_ATIVIDADE": "Curso Básico",
+    "RECEIVER_ALIAS": "Aluno",
+    "ATOR_ALIAS": "Expositor",
+    "COORDENADOR_ALIAS": "Dirigente"
   },
   "ei": {
-    "NOME_ATIVIDADE": "Evangelização Infantil"
+    "NOME_ATIVIDADE": "Evangelização Infantil",
+    "RECEIVER_ALIAS": "Aluno",
+    "ATOR_ALIAS": "Expositor",
+    "COORDENADOR_ALIAS": "Dirigente"
   }
 }

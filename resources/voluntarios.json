@@ -1,0 +1,118 @@
+{
+  "Dirigente Escola": {
+    "NOME": "Dirigente de Escola de Aprendizes",
+    "ATIVIDADE_REF": "eae"
+  },
+  "Dirigente Mocidade": {
+    "NOME": "Dirigente de Mocidade",
+    "ATIVIDADE_REF": "moc"
+  },
+  "Dirigente Pré Mocidade": {
+    "NOME": "Dirigente de Pré Mocidade",
+    "ATIVIDADE_REF": "pre"
+  },
+  "Dirigente Curso de Médiuns": {
+    "NOME": "Dirigente de Curso de Médiuns",
+    "ATIVIDADE_REF": "cm"
+  },
+  "Dirigente Assistência Espiritual": {
+    "NOME": "Dirigente de Assistência Espiritual",
+    "ATIVIDADE_REF": "ae"
+  },
+  "Dirigente Curso Básico": {
+    "NOME": "Dirigente de Curso Básico",
+    "ATIVIDADE_REF": "cb"
+  },
+  "Dirigente Evangelização Infantil": {
+    "NOME": "Dirigente de Evangelização Infantil",
+    "ATIVIDADE_REF": "ei"
+  },
+
+  "Secretário Escola de Aprendizes": {
+    "NOME": "Secretário de Escola de Aprendizes",
+    "ATIVIDADE_REF": "eae"
+  },
+  "Secretário Mocidade": {
+    "NOME": "Secretário de Mocidade",
+    "ATIVIDADE_REF": "moc"
+  },
+  "Secretário Pré Mocidade": {
+    "NOME": "Secretário de Pré Mocidade",
+    "ATIVIDADE_REF": "pre"
+  },
+  "Secretário Curso de Médiuns": {
+    "NOME": "Secretário de Curso de Médiuns",
+    "ATIVIDADE_REF": "cm"
+  },
+  "Secretário Assistência Espiritual": {
+    "NOME": "Secretário de Assistência Espiritual",
+    "ATIVIDADE_REF": "ae"
+  },
+  "Secretário Curso Básico": {
+    "NOME": "Secretário de Curso Básico",
+    "ATIVIDADE_REF": "cb"
+  },
+  "Secretário Evangelização Infantil": {
+    "NOME": "Secretário de Evangelização Infantil",
+    "ATIVIDADE_REF": "ei"
+  },
+
+  "Expositor Escola": {
+    "NOME": "Expositor de Escola de Aprendizes",
+    "ATIVIDADE_REF": "eae"
+  },
+  "Expositor Mocidade": {
+    "NOME": "Expositor de Mocidade",
+    "ATIVIDADE_REF": "moc"
+  },
+  "Expositor Pré Mocidade": {
+    "NOME": "Expositor de Pré Mocidade",
+    "ATIVIDADE_REF": "pre"
+  },
+  "Expositor Curso de Médiuns": {
+    "NOME": "Expositor de Curso de Médiuns",
+    "ATIVIDADE_REF": "cm"
+  },
+  "Expositor Assistência Espiritual": {
+    "NOME": "Expositor de Assistência Espiritual",
+    "ATIVIDADE_REF": "ae"
+  },
+  "Expositor Curso Básico": {
+    "NOME": "Expositor de Curso Básico",
+    "ATIVIDADE_REF": "cb"
+  },
+
+  "Voluntário Escola de Aprendizes": {
+    "NOME": "Voluntário de Escola de Aprendizes",
+    "ATIVIDADE_REF": "eae"
+  },
+  "Voluntário Mocidade": {
+    "NOME": "Voluntário de Mocidade",
+    "ATIVIDADE_REF": "moc"
+  },
+  "Voluntário Pré Mocidade": {
+    "NOME": "Voluntário de Pré Mocidade",
+    "ATIVIDADE_REF": "pre"
+  },
+  "Voluntário Curso de Médiuns": {
+    "NOME": "Voluntário de Curso de Médiuns",
+    "ATIVIDADE_REF": "cm"
+  },
+  "Voluntário Assistência Espiritual": {
+    "NOME": "Voluntário de Assistência Espiritual",
+    "ATIVIDADE_REF": "ae"
+  },
+  "Voluntário Curso Básico": {
+    "NOME": "Voluntário de Curso Básico",
+    "ATIVIDADE_REF": "cb"
+  },
+  "Voluntário Evangelização Infantil": {
+    "NOME": "Voluntário de Evangelização Infantil",
+    "ATIVIDADE_REF": "ei"
+  },
+
+  "Entrevistador Assistência Espiritual": {
+    "NOME": "Entrevistador de Assistência Espiritual",
+    "ATIVIDADE_REF": "ae"
+  }
+}
