@@ -9,4 +9,4 @@ echo "Baixando a imagem das APIs"
 
 docker pull docker.pkg.github.com/brunoduartec/aee_digital_trabalhos/aee_digital_trabalhos:latest
 
-docker-compose  up --build -d
+docker-compose  up -d

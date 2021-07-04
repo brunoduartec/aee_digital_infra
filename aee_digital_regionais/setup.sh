@@ -1,5 +1,5 @@
 echo "Limpando Instancias de Regionais"
-./aee_digital_regionais/cleanup.sh
+./cleanup.sh
 
 echo "Inicializando"
 
@@ -9,4 +9,4 @@ echo "Baixando a imagem das APIs"
 
 docker pull docker.pkg.github.com/brunoduartec/aee_digital_regionais/aee_digital_regionais:latest
 
-docker-compose up --build -d
+docker-compose up -d
