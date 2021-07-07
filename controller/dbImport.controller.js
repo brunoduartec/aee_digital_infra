@@ -127,7 +127,7 @@ module.exports = class DBImportContoller {
           const activity = activity_array[index];
           if (activity.day) {
             let atividadeInfo = {
-              ATIVIDADE_ID: atividades[atividade_key].ID,
+              ATIVIDADE: atividades[atividade_key].ID,
               CENTRO_ID: centro.ID,
               HORINI: activity.time,
               HORFIM: (parseInt(activity.time) + 1).toString(),
@@ -166,6 +166,9 @@ module.exports = class DBImportContoller {
         try {
           let atividade_info = {
             NOME_ATIVIDADE: atividade_value.NOME_ATIVIDADE,
+            RECEIVER_ALIAS: atividade_value.RECEIVER_ALIAS,
+            ATOR_ALIAS: atividade_value.ATOR_ALIAS,
+            COORDENADOR_ALIAS: atividade_value.COORDENADOR_ALIAS,
           };
           atividade = await atividadesService.postAtividade(atividade_info);
         } catch (error) {

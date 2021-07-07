@@ -17,6 +17,9 @@ module.exports = class AtividadeService {
   async postAtividade(atividadeInfo) {
     let body = {
       NOME_ATIVIDADE: atividadeInfo.NOME_ATIVIDADE,
+      RECEIVER_ALIAS: atividadeInfo.RECEIVER_ALIAS,
+      ATOR_ALIAS: atividadeInfo.ATOR_ALIAS,
+      COORDENADOR_ALIAS: atividadeInfo.COORDENADOR_ALIAS,
     };
     try {
       let info = await axios.post(`${config.trabalhosAPI}atividades`, body);
