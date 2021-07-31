@@ -4,6 +4,6 @@ cat ~/DOCKER_TOKEN.txt | docker login https://docker.pkg.github.com -u brunoduar
 
 echo "Baixando a imagem das APIs"
 
-docker-compose pull
+docker-compose -f ./aee_digital_regionais/docker-compose.yml pull
 
-docker-compose up -d
+docker-compose -f ./aee_digital_regionais/docker-compose.yml up -d
