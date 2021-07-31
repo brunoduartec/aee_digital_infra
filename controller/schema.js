@@ -104,10 +104,6 @@ function getSchema() {
           prop: "cnpj",
           type: String,
         },
-        Regional: {
-          prop: "regional",
-          type: String,
-        },
         "Data de Fundação": {
           prop: "fundacao",
           type: (value) => {
@@ -314,6 +310,54 @@ function getSchema() {
           type: {
             "DH EI": {
               prop: "dh_ei",
+              type: (value) => {
+                const number = dayTimeParser(value);
+                if (!number) {
+                  throw new Error("invalid");
+                }
+                return number;
+              },
+            },
+            "Quantidade média de crianças na Evangelização, por semana	": {
+              prop: "criancas",
+              type: Number,
+            },
+            "Quantidade médias de pais ou responsáveis na Sala de Pais, por semana	":
+              {
+                prop: "responsaveis",
+                type: Number,
+              },
+            "Quantidade Total de Evangelizadores	": {
+              prop: "evangelizadores",
+              type: Number,
+            },
+            "Evangelizadores no Maternal	": {
+              prop: "evangelizadores_maternal",
+              type: Number,
+            },
+            "Evangelizadores no Jardim	": {
+              prop: "evangelizadores_jardim",
+              type: Number,
+            },
+            "Evangelizadores no Primário	": {
+              prop: "evangelizadores_primario",
+              type: Number,
+            },
+            "Evangelizadores no Intermediário	": {
+              prop: "evangelizadores_intermediario",
+              type: Number,
+            },
+            "Evangelizadores na Escola de Pais": {
+              prop: "evangelizadores_escola_de_pais",
+              type: Number,
+            },
+          },
+        },
+        "Pré-Mocidade": {
+          prop: "PRE",
+          type: {
+            "DH PRE": {
+              prop: "dh_pre",
               type: (value) => {
                 const number = dayTimeParser(value);
                 if (!number) {
