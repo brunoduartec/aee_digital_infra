@@ -125,12 +125,18 @@ module.exports = class DBImportContoller {
           : [];
         for (let index = 0; index < activity_array.length; index++) {
           const activity = activity_array[index];
+
+          const add_hour_to_end = activity.time.split(":");
+          const horfim = `${(parseInt(add_hour_to_end[0]) + 1).toString()}:${
+            add_hour_to_end[1]
+          }`;
+
           if (activity.day) {
             let atividadeInfo = {
               ATIVIDADE: atividades[atividade_key].ID,
               CENTRO_ID: centro.ID,
               HORINI: activity.time,
-              HORFIM: (parseInt(activity.time) + 1).toString(),
+              HORFIM: horfim,
               DIA_SEMANA: activity.day,
               NUMERO_TURMA: 0,
             };

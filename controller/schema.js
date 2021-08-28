@@ -12,6 +12,25 @@ function getDayByShort(short) {
   return dayByShort[short];
 }
 
+function parseDate(element) {
+  try {
+    let time = element.split("h");
+    const hours = time[0];
+    const minutes = time[1].trim().length > 0 ? time[1].trim() : "00";
+
+    let date = "";
+
+    if (hours != "-") {
+      date = `${hours}:${minutes}`;
+      return date;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    return null;
+  }
+}
+
 function dayTimeParser(dh) {
   // Dom 9h / Qui  20h10 / Sex 20h
   let daysStripped = dh.trim().split("/");
@@ -23,9 +42,7 @@ function dayTimeParser(dh) {
 
     let dayTimeStripped = element.trim().split(" ");
     let day = getDayByShort(dayTimeStripped[0]);
-    let time = dayTimeStripped[1]
-      ? dayTimeStripped[1].replace(/\D/g, "")
-      : undefined;
+    let time = parseDate(dayTimeStripped[1]);
 
     let dayInfo = {
       day: day,
@@ -41,16 +58,21 @@ function dayTimeParser(dh) {
 }
 
 function funcionamentoParser(funcionamento) {
-  if (funcionamentoParser != "-") {
+  try {
     let timeFunction = [];
     let daysStripped = funcionamento.trim().split("/");
 
     for (let index = 0; index < daysStripped.length; index++) {
       const element = daysStripped[index];
-      timeFunction.push(element);
+      const date = parseDate(element);
+      if (date) {
+        timeFunction.push(date.toString());
+      }
     }
 
     return timeFunction;
+  } catch (error) {
+    return null;
   }
 }
 
@@ -106,10 +128,19 @@ function getSchema() {
         },
         "Data de Fundação": {
           prop: "fundacao",
-          type: (value) => {
-            const date = Date.parse(value) ? value : new Date("1/1/1900");
+          type: (date) => {
+            let day, month, year;
+            let dateParsed = "";
 
-            return date;
+            if (date) {
+              day = date.getDate();
+              month = date.getMonth();
+              year = date.getFullYear();
+
+              dateParsed = `${day}/${month}/${year}`;
+            }
+
+            return dateParsed;
           },
         },
         Funcionamento: {
@@ -193,11 +224,11 @@ function getSchema() {
             "DH AE": {
               prop: "dh_ae",
               type: (value) => {
-                const number = dayTimeParser(value);
-                if (!number) {
+                const dateTime = dayTimeParser(value);
+                if (!dateTime) {
                   throw new Error("invalid");
                 }
-                return number;
+                return dateTime;
               },
             },
             "Quantidade média de assistidos em todos os dias, por semana": {
@@ -224,11 +255,11 @@ function getSchema() {
             "DH CB": {
               prop: "dh_cb",
               type: (value) => {
-                const number = dayTimeParser(value);
-                if (!number) {
+                const dateTime = dayTimeParser(value);
+                if (!dateTime) {
                   throw new Error("invalid");
                 }
-                return number;
+                return dateTime;
               },
             },
             "Quantidade de alunos do Curso Básico do Espiritismo": {
@@ -243,11 +274,11 @@ function getSchema() {
             "DH EAE": {
               prop: "dh_eae",
               type: (value) => {
-                const number = dayTimeParser(value);
-                if (!number) {
+                const dateTime = dayTimeParser(value);
+                if (!dateTime) {
                   throw new Error("invalid");
                 }
-                return number;
+                return dateTime;
               },
             },
             "Das turmas de EAE que você mencionou acima, qual o número turma mais recente? Exemplo: minha casa possui três turmas de EAE e a mais recente é a 21ª turma":
@@ -279,11 +310,11 @@ function getSchema() {
             "DH CM": {
               prop: "dh_cm",
               type: (value) => {
-                const number = dayTimeParser(value);
-                if (!number) {
+                const dateTime = dayTimeParser(value);
+                if (!dateTime) {
                   throw new Error("invalid");
                 }
-                return number;
+                return dateTime;
               },
             },
             "Quantidade de Alunos2": {
@@ -311,11 +342,11 @@ function getSchema() {
             "DH EI": {
               prop: "dh_ei",
               type: (value) => {
-                const number = dayTimeParser(value);
-                if (!number) {
+                const dateTime = dayTimeParser(value);
+                if (!dateTime) {
                   throw new Error("invalid");
                 }
-                return number;
+                return dateTime;
               },
             },
             "Quantidade média de crianças na Evangelização, por semana	": {
@@ -359,11 +390,11 @@ function getSchema() {
             "DH PRE": {
               prop: "dh_pre",
               type: (value) => {
-                const number = dayTimeParser(value);
-                if (!number) {
+                const dateTime = dayTimeParser(value);
+                if (!dateTime) {
                   throw new Error("invalid");
                 }
-                return number;
+                return dateTime;
               },
             },
             "Quantidade de alunos na Pré-Mocidade": {
@@ -386,11 +417,11 @@ function getSchema() {
             "DH MOC": {
               prop: "dh_moc",
               type: (value) => {
-                const number = dayTimeParser(value);
-                if (!number) {
+                const dateTime = dayTimeParser(value);
+                if (!dateTime) {
                   throw new Error("invalid");
                 }
-                return number;
+                return dateTime;
               },
             },
             "Quantidade total de alunos da Mocidade": {
