@@ -42,6 +42,44 @@ module.exports = class AtividadeService {
     }
   }
 
+  async getQuiz(category) {
+    try {
+      let quiz = await axios.get(
+        `${config.trabalhosAPI}atividade_generic_quiz?CATEGORY=${category}`
+      );
+      return quiz.data[0];
+    } catch (error) {
+      console.log("Error", error);
+      throw error;
+    }
+  }
+
+  async getQuestion(question) {
+    try {
+      let q = await axios.get(
+        `${config.trabalhosAPI}atividade_generic_question?QUESTION=${question}`
+      );
+      return q.data[0];
+    } catch (error) {
+      console.log("Error", error);
+      throw error;
+    }
+  }
+
+  async postQuestionAnswer(answerInfo) {
+    let body = answerInfo;
+    try {
+      let info = await axios.post(
+        `${config.trabalhosAPI}atividade_generic_quiz_answer`,
+        body
+      );
+      return info.data;
+    } catch (error) {
+      console.log("Error", error);
+      throw error;
+    }
+  }
+
   async postAtividadeCentro(atividadeInfo) {
     let body = atividadeInfo;
     try {

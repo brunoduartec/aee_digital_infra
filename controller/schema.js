@@ -93,6 +93,22 @@ function getSchema() {
           prop: "regional",
           type: String,
         },
+        Telefone: {
+          prop: "telefone",
+          type: String,
+        },
+        "Site na Internet": {
+          prop: "site",
+          type: String,
+        },
+        "Página no Facebook da casa": {
+          prop: "facebook",
+          type: String,
+        },
+        "Página no Instagram da casa": {
+          prop: "instagram",
+          type: String,
+        },
         Local: {
           prop: "local",
           type: {
@@ -120,6 +136,36 @@ function getSchema() {
               prop: "pais",
               type: String,
             },
+            "Sede Própria?": {
+              prop: "sede",
+              type: Boolean,
+            },
+          },
+        },
+        Contato: {
+          prop: "contato",
+          type: {
+            "Nome do Presidente": {
+              prop: "nome",
+              type: String,
+            },
+            "Email do presidente": {
+              prop: "email",
+              type: String,
+            },
+            "Telefone do presidente": {
+              prop: "telefone",
+              type: String,
+            },
+            "Período de mandato como presidente": {
+              prop: "periodo",
+              type: String,
+            },
+            "Você autoriza a divulgação de informações como nome, telefone e email?":
+              {
+                prop: "autorizacao",
+                type: Boolean,
+              },
           },
         },
         "CNPJ (se houver)": {
@@ -141,6 +187,39 @@ function getSchema() {
             }
 
             return dateParsed;
+          },
+        },
+        Traballhos: {
+          prop: "trabalhos",
+          type: {
+            "Livraria?": {
+              prop: "livraria",
+              type: String,
+            },
+            "Bazar?": {
+              prop: "bazar",
+              type: String,
+            },
+            "Biblioteca?": {
+              prop: "biblioteca",
+              type: String,
+            },
+            "Apoio ao Exterior?": {
+              prop: "apoio_exterior",
+              type: String,
+            },
+            "Apoio a Gestante?": {
+              prop: "apoio_gestante",
+              type: String,
+            },
+            "Apoio ao Fumante?": {
+              prop: "apoio_fumante",
+              type: String,
+            },
+            "Cestas Básicas?": {
+              prop: "cesta_basica",
+              type: String,
+            },
           },
         },
         Funcionamento: {
