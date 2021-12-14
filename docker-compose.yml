@@ -1,51 +1,15 @@
 version: "3"
 services:
-  aee_digital_regionais:
-    build: .
-    command: npm start
-    image: aee_digital_regionais
-    container_name: aee_digital_regionais
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
     ports:
-      - "3000:3000"
+      - 8081:8080
+      - 50000:50000
+    container_name: jenkins
     volumes:
-      - .:/usr/app
-    depends_on:
-      - "mongo"
-    links:
-      - mongo
-  aee_digital_trabalhos:
-    build: .
-    command: npm start
-    image: aee_digital_trabalhos
-    container_name: aee_digital_trabalhos
-    ports:
-      - "3100:3100"
-    volumes:
-      - .:/usr/app
-    depends_on:
-      - "mongo"
-    links:
-      - mongo
+      - ~/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/local/bin/docker
     tty: true
-  aee_digital_front:
-    image: aee_digital_front
-    container_name: aee_digital_front
-    restart: always
-    ports:
-      - "4200:4200"
-  mongo:
-    image: mongo
-    volumes:
-      - ./data/db:/data/db
-    ports:
-      - "3010:27017"
-  mongo-express:
-    image: mongo-express
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=mongo
-      - ME_CONFIG_MONGODB_PORT=27017
-    depends_on:
-      - mongo
-    ports:
-      - "30000:8081"
-    restart: always

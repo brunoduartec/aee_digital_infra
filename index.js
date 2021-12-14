@@ -24,6 +24,16 @@ app.post("/import_cadastros", async function (req, res) {
   });
 });
 
+app.post("/import_pass", async function (req, res) {
+  const Controller = require("./controller/passImporter.controller");
+  const controller = new Controller("./resources/Senhas.xlsx");
+  let { success, errors } = await controller.import();
+  res.json({
+    success: success,
+    errors: errors,
+  });
+});
+
 app.post("/", async function (req, res) {
   let pipeline = req.query.project;
 

@@ -52,11 +52,11 @@ module.exports = class DBImportContoller {
         console.log("Error adding Centro", error);
       }
 
-      try {
-        await this.importAtividades(centroInfo, atividades, centro);
-      } catch (error) {
-        console.log("Error adding atividades", error);
-      }
+      // try {
+      //   await this.importAtividades(centroInfo, atividades, centro);
+      // } catch (error) {
+      //   console.log("Error adding atividades", error);
+      // }
     }
 
     return {
