@@ -1,11 +1,20 @@
 version: "3"
+
 services:
   aee_digital_front:
     environment:
       - NODE_ENV=development
+      - trabalho_api=trabalho_api
+    
+    command: npm start
     image: docker.pkg.github.com/brunoduartec/aee_digital_front/aee_digital_front:latest
     container_name: aee_digital_front
-    restart: always
     ports:
       - "4200:4200"
-    tty: true
+    networks:
+      - aee_digital_backend
+    restart: always
+networks:
+  aee_digital_backend:
+    external: true
+    name: aee_digital_backend
